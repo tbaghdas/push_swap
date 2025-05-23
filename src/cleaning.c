@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cleaning.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:19:30 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/22 14:42:02 by btigran           #+#    #+#             */
+/*   Updated: 2025/05/22 19:56:26 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_free(char **words)
 {
-	stack	*a;
-	stack	b;
+	int	i;
 
-	if (ft_check_args_create_stack(argc, argv, &a) == 1)
+	i = 0;
+	while (words[i] != NULL)
 	{
-		ft_out_print("Error");
-		return (1);
+		free(words[i]);
 	}
-	//ft_create_stacks(argc, argv);
-	ft_sort_stack(a, b);
+	free(words);
 }
 
+void	ft_free_stack(stack **stk)
+{
+	stack	*tmp;
+
+	if (stk == NULL)
+	{
+		return ;
+	}
+	while (*stk != NULL)
+	{
+		tmp = stk->next;
+		free(*stk);
+		*stk = tmp;
+	}
+}

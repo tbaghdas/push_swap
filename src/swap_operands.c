@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:19:30 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/22 21:04:18 by btigran           #+#    #+#             */
+/*   Updated: 2025/05/23 16:54:35 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_swap(stack **stk)
 {
-	stack	*a;
-	stack	b;
-
-	if (ft_check_args_create_stack(argc, argv, &a) == 1)
+	stack *tmp;
+	
+	if (stk == NULL || *stk == NULL || stk->next == NULL)
 	{
-		ft_out_print("Error");
-		return (1);
+		return ;
 	}
-	//ft_create_stacks(argc, argv);
-	ft_sort_stack(a, b);
+	tmp = *stk;
+	*stk = *stk->next;
+	tmp->next = *stk->next;
+	*stk->next = tmp;
 }
 
+void	sa(stack **a)
+{
+	ft_swap(a);
+	ft_out_print("sa");
+}
+
+void	sb(stack **b)
+{
+	ft_swap(b);
+	ft_out_print("sb");
+}
+
+void	ss(stack **a, stack **b)
+{
+	ft_swap(a);
+	ft_swap(b);
+	ft_out_print("ss");
+}

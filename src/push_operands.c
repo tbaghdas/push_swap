@@ -1,28 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_operands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:19:30 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/23 17:02:45 by btigran           #+#    #+#             */
+/*   Updated: 2025/05/23 20:25:20 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_push(stack **dst, stack **src)
 {
-	stack	*a;
-	stack	b;
-
-	if (ft_check_args_create_stack(argc, argv, &a) == 1)
+	stack *tmp;
+	
+	if (dst == NULL || src == NULL || *src == NULL)
 	{
-		ft_out_print("Error");
-		return (1);
+		return ;
 	}
-	//ft_create_stacks(argc, argv);
-	ft_sort_stack(a, b);
+	if (*dst == NULL)
+	{
+		*dst = *src;
+		tmp = *src->next;
+		*src->next = NULL;
+		*src = tmp;
+	}
+	else
+	{
+		tmp = *src->next;
+		*src->next = *dts;
+		*dst = *src;
+		*src = tmp;
+	}
 }
 
+void	pa(stack **a, stack **b)
+{
+	ft_push(a, b);
+	ft_out_print("pa");
+}
+
+void	pb(stack **a, stack **b)
+{
+	ft_push(b, a);
+	ft_out_print("pb");
+}

@@ -1,28 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate_operands.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:19:30 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/23 20:45:56 by btigran           #+#    #+#             */
+/*   Updated: 2025/05/23 21:10:46 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_rotate(stack **stk)
 {
-	stack	*a;
-	stack	b;
-
-	if (ft_check_args_create_stack(argc, argv, &a) == 1)
+	stack *tmp;
+	
+	if (stk == NULL || *stk == NULL || *stk->next == NULL)
 	{
-		ft_out_print("Error");
-		return (1);
+		return ;
 	}
-	//ft_create_stacks(argc, argv);
-	ft_sort_stack(a, b);
+	tmp = *stk;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *stk;
+	*stk = *stk->next;
 }
 
+void	ra(stack **a)
+{
+	ft_rotate(a);
+	ft_out_print("ra");
+}
+
+void	rb(stack **b)
+{
+	ft_rotate(b);
+	ft_out_print("rb");
+}
+
+void	rr(stack **a, stack **b)
+{
+	ft_rotate(a);
+	ft_rotate(b);
+	ft_out_print("rr");
+}

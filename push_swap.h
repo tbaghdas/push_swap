@@ -18,7 +18,9 @@
 typedef struct stack
 {
 	struct stack	*next;
-	int		value;
+	int				value;
+
+	*next = NULL;
 } stack;
 
 
