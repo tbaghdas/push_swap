@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_operands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:02:45 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/23 20:25:20 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:37:46 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_push(stack **dst, stack **src)
 {
@@ -23,14 +23,14 @@ void	ft_push(stack **dst, stack **src)
 	if (*dst == NULL)
 	{
 		*dst = *src;
-		tmp = *src->next;
-		*src->next = NULL;
+		tmp = (*src)->next;
+		(*src)->next = NULL;
 		*src = tmp;
 	}
 	else
 	{
-		tmp = *src->next;
-		*src->next = *dts;
+		tmp = (*src)->next;
+		(*src)->next = *dst;
 		*dst = *src;
 		*src = tmp;
 	}

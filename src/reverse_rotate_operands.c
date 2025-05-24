@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_operands.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:04:36 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/23 21:13:16 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:36:42 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_reverse_rotate(stack **stk)
 {
 	stack *tmp;
 	stack *prev;
 	
-	if (stk == NULL || *stk == NULL || *stk->next == NULL)
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		return ;
 	}
 	tmp = *stk;
-	while (*stk->next != NULL)
+	while ((*stk)->next != NULL)
 	{
 		prev = *stk;
-		*stk = *stk->next;
+		*stk = (*stk)->next;
 	}
-	*stk->next = tmp;
+	(*stk)->next = tmp;
 	prev->next = NULL;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:19:30 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:40:01 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	stack	*a;
-	stack	b;
+	stack	*b;
 
 	if (ft_check_args_create_stack(argc, argv, &a) == 1)
 	{

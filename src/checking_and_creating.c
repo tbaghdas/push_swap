@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checking.c                                         :+:      :+:    :+:   */
+/*   checking_and_creating.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:45:21 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/22 19:59:15 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:20:30 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	ft_check_args_create_stack(int argc, char **argv, stack **a)
 			j = 0;
 			while (words[j] != NULL)
 			{
-				if (ft_check_word(word[j++], a) != 0)
+				if (ft_check_word(words[j++], a) != 0)
 					return (ft_free(words), 1);
 			}
-			ft_free(word);
+			ft_free(words);
 		}
 		else
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleaning.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 14:42:02 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/22 19:56:26 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:38:28 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_free_stack(stack **stk)
 	}
 	while (*stk != NULL)
 	{
-		tmp = stk->next;
+		tmp = (*stk)->next;
 		free(*stk);
 		*stk = tmp;
 	}

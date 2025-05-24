@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:11:57 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/23 21:29:48 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:30:59 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,23 @@
 int	ft_add_node(stack **stk, int value)
 {
 	stack	*new_node;
+	stack	*tmp;
 
 	if (stk == NULL)
-	{
-		return (0);
-	}
+		return (1);
 	new_node = (stack *) malloc(sizeof(stack));
 	if (new_node == NULL)
-	{
 		return (1);
-	}
 	new_node->value = value;
+	new_node->next = NULL;
 	if (*stk != NULL)
 	{
-		while (stk->next != NULL)
+		tmp = *stk;
+		while (tmp->next != NULL)
 		{
-			stk = stk->next;
+			tmp = tmp->next;
 		}
-		stk->next = new_node;
+		tmp->next = new_node;
 	}
 	else
 	{

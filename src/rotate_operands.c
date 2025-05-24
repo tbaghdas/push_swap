@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_operands.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 20:45:56 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/23 21:10:46 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:35:46 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_rotate(stack **stk)
 {
 	stack *tmp;
 	
-	if (stk == NULL || *stk == NULL || *stk->next == NULL)
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		return ;
 	}
@@ -26,7 +26,7 @@ void	ft_rotate(stack **stk)
 		tmp = tmp->next;
 	}
 	tmp->next = *stk;
-	*stk = *stk->next;
+	*stk = (*stk)->next;
 }
 
 void	ra(stack **a)

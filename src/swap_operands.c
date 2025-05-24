@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operands.c                                         :+:      :+:    :+:   */
+/*   swap_operands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 21:04:18 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/23 16:54:35 by btigran          ###   ########.fr       */
+/*   Updated: 2025/05/24 15:34:46 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	ft_swap(stack **stk)
 {
 	stack *tmp;
 	
-	if (stk == NULL || *stk == NULL || stk->next == NULL)
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		return ;
 	}
 	tmp = *stk;
-	*stk = *stk->next;
-	tmp->next = *stk->next;
-	*stk->next = tmp;
+	*stk = (*stk)->next;
+	tmp->next = (*stk)->next;
+	(*stk)->next = tmp;
 }
 
 void	sa(stack **a)
