@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cleaning.c                                         :+:      :+:    :+:   */
+/*   push_operands_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 14:42:02 by btigran           #+#    #+#             */
-/*   Updated: 2025/07/03 18:39:47 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/23 17:02:45 by btigran           #+#    #+#             */
+/*   Updated: 2025/07/03 22:49:35 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-void	ft_free(char **words)
-{
-	int	i;
-
-	if (words == NULL)
-	{
-		return ;
-	}
-	i = 0;
-	while (words[i] != NULL)
-	{
-		free(words[i]);
-		i++;
-	}
-	free(words);
-}
-
-void	ft_free_stack(t_stack **stk)
+void	ft_push(t_stack **dst, t_stack **src)
 {
 	t_stack	*tmp;
 
-	if (stk == NULL)
+	if (dst == NULL || src == NULL || *src == NULL)
 	{
 		return ;
 	}
-	while (*stk != NULL)
+	if (*dst == NULL)
 	{
-		tmp = (*stk)->next;
-		free(*stk);
-		*stk = tmp;
+		*dst = *src;
+		tmp = (*src)->next;
+		(*src)->next = NULL;
+		*src = tmp;
 	}
+	else
+	{
+		tmp = (*src)->next;
+		(*src)->next = *dst;
+		*dst = *src;
+		*src = tmp;
+	}
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	ft_push(a, b);
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	ft_push(b, a);
 }

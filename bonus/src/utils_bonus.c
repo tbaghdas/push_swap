@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:11:57 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/07/03 22:15:38 by btigran          ###   ########.fr       */
+/*   Updated: 2025/07/03 22:49:20 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 int	ft_add_node(t_stack **stk, int value)
 {
@@ -67,13 +67,13 @@ int	ft_checker(t_stack *a, t_stack *b)
 {
 	int	prev;
 
-	if (a == NULL || a->next == NULL)
-	{
-		return (0);
-	}
-	if (b != NULL)
+	if (a == NULL || b != NULL)
 	{
 		return (1);
+	}
+	if (a->next == NULL)
+	{
+		return (0);
 	}
 	prev = a->value;
 	a = a->next;

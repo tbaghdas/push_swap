@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:32:50 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/05/24 15:40:01 by tbaghdas         ###   ########.fr       */
+/*   Updated: 2025/07/03 22:15:28 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 int	main(int argc, char **argv)
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 
+	a = NULL;
+	b = NULL;
 	if (ft_check_args_create_stack(argc, argv, &a) == 1)
 	{
-		ft_out_print("Error");
+		ft_out_print("Error\n", 2);
 		return (1);
 	}
-	//ft_create_stacks(argc, argv);
-	ft_sort_stack(a, b);
+	ft_sort_stack(&a, &b);
+	ft_free_stack(&a);
+	ft_free_stack(&b);
 }
-

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_operands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:02:45 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/24 15:37:46 by tbaghdas         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:13:14 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_push(stack **dst, stack **src)
+void	ft_push(t_stack **dst, t_stack **src)
 {
-	stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (dst == NULL || src == NULL || *src == NULL)
 	{
 		return ;
@@ -36,14 +36,14 @@ void	ft_push(stack **dst, stack **src)
 	}
 }
 
-void	pa(stack **a, stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
 	ft_push(a, b);
-	ft_out_print("pa");
+	ft_out_print("pa\n", 1);
 }
 
-void	pb(stack **a, stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
 	ft_push(b, a);
-	ft_out_print("pb");
+	ft_out_print("pb\n", 1);
 }

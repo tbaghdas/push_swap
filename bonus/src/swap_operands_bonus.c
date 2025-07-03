@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   swap_operands_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 21:08:14 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/07/03 14:56:51 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/22 21:04:18 by btigran           #+#    #+#             */
+/*   Updated: 2025/07/03 22:50:10 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../checker.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_swap(t_stack **stk)
 {
-	size_t	i;
+	t_stack	*tmp;
 
-	i = 0;
-	if (s1 == NULL || s2 == NULL || !n)
-		return (0);
-	while (s1[i] && s2[i] && i + 1 < n && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
+		return ;
+	}
+	tmp = *stk;
+	*stk = (*stk)->next;
+	tmp->next = (*stk)->next;
+	(*stk)->next = tmp;
+}
+
+void	sa(t_stack **a)
+{
+	ft_swap(a);
+}
+
+void	sb(t_stack **b)
+{
+	ft_swap(b);
+}
+
+void	ss(t_stack **a, t_stack **b)
+{
+	ft_swap(a);
+	ft_swap(b);
 }

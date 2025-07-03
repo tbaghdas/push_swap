@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_operands.c                          :+:      :+:    :+:   */
+/*   rotate_operands_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 21:04:36 by btigran           #+#    #+#             */
-/*   Updated: 2025/07/03 20:13:33 by btigran          ###   ########.fr       */
+/*   Created: 2025/05/23 20:45:56 by btigran           #+#    #+#             */
+/*   Updated: 2025/07/03 22:49:59 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-void	ft_reverse_rotate(t_stack **stk)
+void	ft_rotate(t_stack **stk)
 {
 	t_stack	*tmp;
-	t_stack	*prev;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		return ;
 	}
 	tmp = *stk;
-	while ((*stk)->next != NULL)
+	while (tmp->next != NULL)
 	{
-		prev = *stk;
-		*stk = (*stk)->next;
+		tmp = tmp->next;
 	}
-	(*stk)->next = tmp;
-	prev->next = NULL;
+	tmp->next = *stk;
+	tmp = *stk;
+	*stk = (*stk)->next;
+	tmp->next = NULL;
 }
 
-void	rra(t_stack **a)
+void	ra(t_stack **a)
 {
-	ft_reverse_rotate(a);
-	ft_out_print("rra\n", 1);
+	ft_rotate(a);
 }
 
-void	rrb(t_stack **b)
+void	rb(t_stack **b)
 {
-	ft_reverse_rotate(b);
-	ft_out_print("rrb\n", 1);
+	ft_rotate(b);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-	ft_reverse_rotate(a);
-	ft_reverse_rotate(b);
-	ft_out_print("rrr\n", 1);
+	ft_rotate(a);
+	ft_rotate(b);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checking_and_creating.c                            :+:      :+:    :+:   */
+/*   checking_and_creating_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:45:21 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/07/03 19:45:10 by btigran          ###   ########.fr       */
+/*   Updated: 2025/07/03 19:43:26 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 int	ft_check_args_create_stack(int argc, char **argv, t_stack **a)
 {

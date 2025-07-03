@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   swap_operands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 21:04:18 by btigran           #+#    #+#             */
-/*   Updated: 2025/05/24 15:34:46 by tbaghdas         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:14:02 by btigran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap(stack **stk)
+void	ft_swap(t_stack **stk)
 {
-	stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 	{
 		return ;
@@ -26,21 +26,21 @@ void	ft_swap(stack **stk)
 	(*stk)->next = tmp;
 }
 
-void	sa(stack **a)
+void	sa(t_stack **a)
 {
 	ft_swap(a);
-	ft_out_print("sa");
+	ft_out_print("sa\n", 1);
 }
 
-void	sb(stack **b)
+void	sb(t_stack **b)
 {
 	ft_swap(b);
-	ft_out_print("sb");
+	ft_out_print("sb\n", 1);
 }
 
-void	ss(stack **a, stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
 	ft_swap(a);
 	ft_swap(b);
-	ft_out_print("ss");
+	ft_out_print("ss\n", 1);
 }
