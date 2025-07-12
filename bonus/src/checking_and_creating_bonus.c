@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checking_and_creating_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:45:21 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/07/03 19:43:26 by btigran          ###   ########.fr       */
+/*   Updated: 2025/07/12 14:30:41 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

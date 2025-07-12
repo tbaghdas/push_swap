@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_operands_bonus.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btigran <btigran@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 21:04:36 by btigran           #+#    #+#             */
-/*   Updated: 2025/07/03 22:49:50 by btigran          ###   ########.fr       */
+/*   Created: 2025/07/12 14:31:22 by tbaghdas          #+#    #+#             */
+/*   Updated: 2025/07/12 14:31:25 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
