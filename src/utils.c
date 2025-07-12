@@ -6,7 +6,7 @@
 /*   By: tbaghdas <tbaghdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:11:57 by tbaghdas          #+#    #+#             */
-/*   Updated: 2025/07/12 14:44:11 by tbaghdas         ###   ########.fr       */
+/*   Updated: 2025/07/12 17:40:08 by tbaghdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_checker(t_stack *a, t_stack *b)
 	}
 	prev = a->value;
 	a = a->next;
-	while (a->next != NULL)
+	while (a != NULL)
 	{
 		if (prev > a->value)
 		{
